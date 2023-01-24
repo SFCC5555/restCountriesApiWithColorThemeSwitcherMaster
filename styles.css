@@ -1,0 +1,116 @@
+* {
+    box-sizing: border-box;
+    padding: 0%;
+    margin: 0%;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+:root {
+    
+    --font1: 'Nunito Sans', sans-serif;
+
+    --darkBlue: 209, 23%, 22%;
+    --veryDarkBlue: 207, 26%, 17%;
+    --veryDarkGray: 200, 15%, 8%;
+    --darkGray: 0, 0%, 52%;
+    --veryLightGray: 0, 0%, 98%;
+    --white: 0, 0%, 100%;
+
+}
+
+.darkModeElements {
+    background-color: hsl(var(--darkBlue));
+    color: hsl(var(--white));
+}
+
+.lightModeElements {
+    background-color: hsl(var(--white));
+    color: hsl(var(--veryDarkGray));
+    box-shadow: 0px 0px 7px hsl(var(--darkGray));
+}
+
+.darkModeBackground {
+    background-color: hsl(var(--veryDarkBlue));
+}
+
+.ligthModeBackground {
+    background-color: hsl(var(--veryLightGray));
+}
+
+.input {
+    color: hsl(var(--darkGray));
+}
+
+
+.font-size14px {
+    font-size: 1.4rem;
+}
+
+.font-size16px {
+    font-size: 1.6rem;
+}
+
+.font-weight300 {
+    font-weight:300;
+}
+
+.font-weight600 {
+    font-weight:600;
+}
+
+.font-weight800 {
+    font-weight:800;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.column {
+    flex-direction: column;
+}
+
+body {
+    font-family: var(--font1);
+    font-size: 1.4rem;
+}
+
+nav {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--darkModeTextLightModeElements);
+    padding: 0px 20px;
+}
+
+span {
+
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    margin-right: 10px;
+}
+
+
+.darkModeIconLight {
+    
+    width: 16px;
+    height: 16px;
+    background-image: url(./design/Assets/darkModeIconLight.png);
+
+}
+
+.darkModeIconDark {
+
+    width: 16px;
+    height: 16px;
+    background-image: url(./design/Assets/darkModeIconDark.png);
+
+}
