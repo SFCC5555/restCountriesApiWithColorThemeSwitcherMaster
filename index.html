@@ -11,12 +11,49 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap" rel="stylesheet">
     <title>COUNTRY.io</title>
 </head>
-<body class="ligthModeBackground">
+<body class="ligthModeBackground flex column">
     <nav class="lightModeElements">
         <div class="font-size16px font-weight800">Where in the world?</div>
-        <div class="font-weight600 flex"><span class="darkModeIconLight"></span>Dark Mode</div>
-
+        <div class="font-weight600 flex cursorPointer"><span class="darkModeIconLight"></span>Dark Mode</div>
     </nav>
+
+    <input id="searchInput" class="lightModeElements" type="search" placeholder="Search for a country...">
+
+    <section class="regionContainer">
+
+        <button id="filterButton" class="lightModeElements">Filter by Region<span class="downArrowIconLight"></span></button>
+
+        <section id="regionMenu"  class="lightModeElements menu">
+    
+            <div>Africa</div>
+            <div>America</div>
+            <div>Asia</div>
+            <div>Europe</div>
+            <div>Oceania</div>
+    
+    
+        </section>
+
+    </section>
+
+    <section class="countriesContainer">
+
+        <div class="lightModeElements flex column">
+
+            <img src="./design/desktop-preview.jpg">
+
+            <div class="font-weight800 font-size16px">Germany</div>
+
+            <div class="font-weight600" ><span class="font-weight800" >Population:</span>098509</div>
+
+            <div class="font-weight600" ><span class="font-weight800" >Capital:</span>Berlin</div>
+
+            
+        </div>
+
+    </section>
+    
+
     
 </body>
 </html>
