@@ -1,0 +1,46 @@
+.inputSection {
+
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.searchIconLight, .searchIconDark {
+    
+    left: 80px;
+    top: -17px;
+
+}
+
+.regionContainer {
+
+    width: 20%;
+    min-width: 150px;
+    max-width: 175px;
+    margin-right: 50px;
+}
+
+nav {
+    padding: 0px 50px;
+}
+
+input {
+    margin-left: 50px;
+}
+
+.countriesContainer {
+    padding: 15px 50px;
+
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+}
+
+.countriesContainer>div {
+    width: 21%;
+    min-width: 200px;
+    padding-bottom: 25px;
+
+}
