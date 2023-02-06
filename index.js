@@ -19,38 +19,110 @@ fetch('https://restcountries.com/v2/all')
         .then(response => response.json())
         .then(data => {
 
-        console.log(data)
-        for (let i of data) {
+        //console.log(data)
 
-            let countrie = document.createElement('div');
-            
-            countrie.classList.add('lightModeElements');
-            countrie.classList.add('flex');
-            countrie.classList.add('column')
 
-            countrie.innerHTML=`<img src="${i.flag}">
-            
-            <div class="font-weight800 font-size16px">${i.name}</div>
-            
-            <div class="font-weight600" ><span class="font-weight800" >Population:</span>${i.population}</div>
+        regionMenu.addEventListener('click',selectRegion);
 
-            <div class="font-weight600" ><span class="font-weight800" >Region:</span>${i.region}</div>
-            
-            <div class="font-weight600" ><span class="font-weight800" >Capital:</span>${i.capital}</div>  
-            
-            </div>`
-            
-            countriesContainer.appendChild(countrie);  
+        let region = 'Filter by Region';
 
-    
+
+        function selectRegion(event) {
+
+            let target = event.target.outerText;
+
+            let filterOptions=['Africa','America','Asia','Europe','Oceania','All'];
+
+            for (let i of filterOptions) {
+                if (target===i) {
+
+                    if (target==='All') {
+                        filterButton.innerText='Filter by Region';
+                        region= filterButton.innerText;
+                        console.log(region)
+                    } else {
+                        filterButton.innerText=target;
+                        if (target==='America') {
+                            region = filterButton.innerText + 's'
+                        } else {
+                            region = filterButton.innerText;
+                        }
+
+                    }
+                    renderCountries();
+                }
+            }
         }
         
-        let lightModeElements = document.querySelectorAll('.lightModeElements');
 
-        darkModeButton.addEventListener('click',darkModeSwitch);
+        function renderCountries() {
+
+            countriesContainer.innerHTML="";
+
+            for (let i of data) {
+
+                function renderFilterCountries() {
+                    let countrie = document.createElement('div');
+
+                    console.log(darkModeIcon.classList)
+
+                    if (darkModeIcon.classList.value==='darkModeIconLight') {
+                        countrie.classList.add('lightModeElements');
+                    } else {
+                        countrie.classList.add('darkModeElements');
+                    }
+                
+
+                    countrie.classList.add('flex');
+                    countrie.classList.add('column')
+        
+                    countrie.innerHTML=`<img src="${i.flag}">
+                    
+                    <div class="font-weight800 font-size16px">${i.name}</div>
+                    
+                    <div class="font-weight600" ><span class="font-weight800" >Population:</span>${i.population}</div>
+        
+                    <div class="font-weight600" ><span class="font-weight800" >Region:</span>${i.region}</div>
+                    
+                    <div class="font-weight600" ><span class="font-weight800" >Capital:</span>${i.capital}</div>  
+                    
+                    </div>`
+                    
+                    countriesContainer.appendChild(countrie);
+                }
+
+                if (region==='Filter by Region') {
+
+                    renderFilterCountries();
+
+                }
+
+                else if (region===i.region) {
+
+                    renderFilterCountries()
+    
+                }
+    
+            }
+
+
+            if (darkModeIcon.classList.value==='darkModeIconLight') {
+
+                elements = document.querySelectorAll('.lightModeElements');
+            } else {
+                elements = document.querySelectorAll('.darkModeElements');
+            }
+            
+
+
+            darkModeButton.addEventListener('click',darkModeSwitch);
+
+        }
+
+        renderCountries()
 
         function darkModeSwitch() {
-        
+
             body.classList.toggle('ligthModeBackground');
             body.classList.toggle('darkModeBackground');
 
@@ -62,24 +134,28 @@ fetch('https://restcountries.com/v2/all')
 
             downArrowIcon.classList.toggle('downArrowIconLight');
             downArrowIcon.classList.toggle('downArrowIconDark');
-        
-            for (let l of lightModeElements) {
+
+            for (let l of elements) {
                 l.classList.toggle('lightModeElements');
                 l.classList.toggle('darkModeElements');
             }
-        
-        }    
+        }   
+
     
-    
-    })
-    
+        })
+
+
+ 
+
+
+
 filterButton.addEventListener('click',controlFilterButton); 
 
 function controlFilterButton() {
 
     regionMenu.classList.toggle('inactive');
     
-    console.log(regionMenu.classList.value)
+    //console.log(regionMenu.classList.value)
     
 }
 
@@ -88,15 +164,22 @@ document.addEventListener('click',hideRegionMenu);
 
 function hideRegionMenu(event) {
 
-    console.log(event.target)
+    //console.log(event.target)
 
     if (event.target!==filterButton) {
 
-        console.log(regionMenu.classList.value)
+        //console.log(regionMenu.classList.value)
 
         if (regionMenu.classList.value.includes('menu')) {
             regionMenu.classList.add('inactive');
         }
     }
 }
+
+
+
+
+
+
+
 
