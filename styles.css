@@ -275,3 +275,15 @@ img {
 label {
     position: absolute;
 }
+
+input datalist {
+    background-color: red;
+    border: 1px solid #ddd;
+    padding: 10px;
+  }
+  
+  datalist option {
+    font-size: 16px;
+    color: #333;
+    padding: 10px;
+  }

@@ -14,6 +14,10 @@ let searchIcon = document.getElementById('searchIcon');
 
 let downArrowIcon = document.getElementById('downArrowIcon');
 
+let search = document.getElementById('search');
+
+let searchInput = document.getElementById('searchInput');
+
 
 fetch('https://restcountries.com/v2/all')
         .then(response => response.json())
@@ -23,6 +27,12 @@ fetch('https://restcountries.com/v2/all')
 
 
         regionMenu.addEventListener('click',selectRegion);
+
+        searchInput.addEventListener('keydown',renderCountriesLately);
+
+        function renderCountriesLately(){
+            setTimeout(renderCountries,0);
+        }
 
         let region = 'Filter by Region';
 
@@ -59,12 +69,14 @@ fetch('https://restcountries.com/v2/all')
 
             countriesContainer.innerHTML="";
 
+            search.innerHTML="";
+
+            let counter=0;
+
             for (let i of data) {
 
                 function renderFilterCountries() {
                     let countrie = document.createElement('div');
-
-                    console.log(darkModeIcon.classList)
 
                     if (darkModeIcon.classList.value==='darkModeIconLight') {
                         countrie.classList.add('lightModeElements');
@@ -87,23 +99,45 @@ fetch('https://restcountries.com/v2/all')
                     <div class="font-weight600" ><span class="font-weight800" >Capital:</span>${i.capital}</div>  
                     
                     </div>`
+
+                    counter++
+
                     
                     countriesContainer.appendChild(countrie);
+
+                    let option = document.createElement('option');
+                    option.setAttribute('value',i.name);
+                    search.appendChild(option);
+                    
+
                 }
 
-                if (region==='Filter by Region') {
+                let match = new RegExp(searchInput.value,'i');
 
-                    renderFilterCountries();
+                if (match.test(i.name)) {
+                    
+                    if (region==='Filter by Region') {
 
-                }
-
-                else if (region===i.region) {
-
-                    renderFilterCountries()
+                        renderFilterCountries();
     
+                    }
+    
+                    else if (region===i.region) {
+    
+                        renderFilterCountries()
+        
+                    }
+
                 }
     
             }
+
+            if (counter===0) {
+                if (counter===0) {
+                    countriesContainer.innerHTML="NO MATCHES";
+                }
+            }
+
 
 
             if (darkModeIcon.classList.value==='darkModeIconLight') {
@@ -143,9 +177,6 @@ fetch('https://restcountries.com/v2/all')
 
     
         })
-
-
- 
 
 
 
