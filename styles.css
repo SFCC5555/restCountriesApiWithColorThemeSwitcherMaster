@@ -41,6 +41,7 @@ html {
 
 .darkModeBackground {
     background-color: hsl(var(--veryDarkBlue));
+    color: hsl(var(--white));
 }
 
 .ligthModeBackground {
@@ -82,6 +83,14 @@ html {
 
 .marginTop20px {
     margin-top: 20px;
+}
+
+.marginBottom30px {
+    margin-bottom: 30px;
+}
+
+.marginBottom10px {
+    margin-bottom: 10px;
 }
 
 body {
@@ -276,14 +285,71 @@ label {
     position: absolute;
 }
 
-input datalist {
-    background-color: red;
-    border: 1px solid #ddd;
-    padding: 10px;
-  }
-  
-  datalist option {
-    font-size: 16px;
-    color: #333;
-    padding: 10px;
-  }
+
+#backButton {
+    width: 120px;
+    align-self: flex-start;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.backArrowLight {
+
+    width: 22.5px;
+    height: 13px;
+    background-image: url(./design/Assets/leftArrowLight.png);
+    translate: 0px 2px;
+
+}
+
+.backArrowDark {
+    
+    width: 22.5px;
+    height: 13px;
+    background-image: url(./design/Assets/leftArrowDark.png);
+    translate: 0px 2px;
+    
+}
+
+main {
+    margin: 50px 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.detailImg {
+    border-radius: 0px;
+    margin-bottom: 40px;
+    cursor: crosshair;
+}
+
+.data1>div {
+    margin-bottom: 10px;
+
+}
+
+.data2>div {
+    margin-bottom: 10px;
+
+}
+
+.buttonsContainer {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5px;
+    translate: 0px -5px;
+}
+
+.buttonsContainer>button {
+    width:fit-content;
+    text-align: center;
+    font-size: 1.2rem;
+    padding: 5px 10px;
+}
+
+.detailSection {
+    position: absolute;
+    top:62px;
+    z-index: 2;
+}

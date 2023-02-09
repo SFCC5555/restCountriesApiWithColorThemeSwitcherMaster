@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css"/>
+    <link rel="stylesheet" type="text/css" href="desktop.css" media="screen and (min-width:600px)"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap" rel="stylesheet">
+    <title>COUNTRY.io/DETAIL</title>
+</head>
+<body class="flex column ligthModeBackground ">
+    <nav class="lightModeElements">
+        <div class="font-size16px font-weight800">Where in the world?</div>
+        <div id="darkModeButton" class="font-weight600 flex cursorPointer"><span id="darkModeIcon" class="darkModeIconLight"></span>Dark Mode</div>
+    </nav>
+
+    <section class="detailSection">
+
+        <button id='backButton' class="lightModeElements"><span id = 'backArrow' class="backArrowLight"></span>Back</button>
+
+        <main>
+    
+            <img class='detailImg' src="./design/desktop-design-detail-dark.jpg">
+            <section class="data">
+                <div class="countryData">
+                    <div class="data1 marginBottom30px">
+    
+                        <div class="font-weight800 font-size16px marginBottom30px">Belgium</div>
+                        <div class="font-weight600"><span class="font-weight800">Native Name: </span>Belgie</div>
+                        <div class="font-weight600"><span class="font-weight800">Population: </span>324234</div>
+                        <div class="font-weight600"><span class="font-weight800">Region: </span>Europe</div>
+                        <div class="font-weight600"><span class="font-weight800">Sub Region: </span>Western Europe</div>
+                        <div class="font-weight600"><span class="font-weight800">Capital: </span>Brussels</div>
+    
+                    </div>
+                    <div class="data2 marginBottom30px">
+    
+                        <div class="font-weight600"><span class="font-weight800">Top Level Domain</span>be</div>
+                        <div class="font-weight600"><span class="font-weight800">Currencies</span>Euro</div>
+                        <div class="font-weight600"><span class="font-weight800">Languages</span>Dutch, French, German</div>
+    
+                    </div>
+                </div>
+    
+                <div class="borderData">
+                    <div class="font-weight800 marginBottom10px">Border Countries:</div>
+                    <div class="buttonsContainer">
+                        <button class="lightModeElements">France</button>
+                        <button class="lightModeElements">Germany</button>
+                        <button class="lightModeElements">Netherlands</button>
+                    </div>
+                </div>
+    
+            </section>
+    
+        </main>
+
+
+
+
+
+    </section>
+    
+
+    
+
+    <script src="./detail.mjs" type="module"></script>   
+</body>
+</html>

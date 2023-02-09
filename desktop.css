@@ -44,3 +44,35 @@ input {
     padding-bottom: 25px;
 
 }
+
+
+#backButton {
+
+    margin-left: 50px;
+
+}
+
+main {
+    margin: 40px 50px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.detailImg {
+    width: 45%;
+}
+
+.countryData {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.borderData {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
