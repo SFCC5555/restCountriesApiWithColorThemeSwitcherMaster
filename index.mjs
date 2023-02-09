@@ -20,6 +20,8 @@ let searchInput = document.getElementById('searchInput');
 
 let detailSection = document.querySelector('.detailSection');
 
+let title = document.querySelector('title');
+
 let elements;
 
 let backArrow;
@@ -73,6 +75,8 @@ fetch('https://restcountries.com/v2/all')
 
         function renderCountries() {
 
+            title.innerText='COUNTRY.io'
+
             countriesContainer.innerHTML="";
 
             search.innerHTML="";
@@ -124,14 +128,14 @@ fetch('https://restcountries.com/v2/all')
 
                         let currencies = 'No currencies';
 
-                        console.log(i);
 
                         if (i.currencies) {
 
                             currencies = i.currencies.map(l=>l.name).join(', ');
 
-                        }
+                        };
 
+                        title.innerText = `COUNTRY.io/${i.name}`
 
 
                         countriesContainer.innerHTML="";
