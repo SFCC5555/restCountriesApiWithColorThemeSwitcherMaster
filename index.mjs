@@ -219,6 +219,25 @@ fetch('https://restcountries.com/v2/all')
 
                                 borderButton.innerText=borderName;
                                 buttonsContainer.appendChild(borderButton);
+
+                                borderButton.addEventListener('click',renderDetailAgain);
+
+                                function renderDetailAgain(event) {
+
+                                    let newCountryName = event.target.innerText
+
+                                    let indexNewCountryDetail = data.findIndex(c=>c.name===newCountryName);
+
+
+                                    let newCountryObject = data[indexNewCountryDetail];
+
+                                    console.log(newCountryObject);
+
+                                    i = newCountryObject;
+
+                                    renderDetail();
+                                    
+                                }
     
                             }
     
